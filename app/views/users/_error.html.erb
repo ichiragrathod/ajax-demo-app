@@ -1,0 +1,14 @@
+<% if user.errors.any? %>
+  <div style="color: red">
+    <h4><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h4>
+  
+    <% user.errors.each do |error| %>
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong> <%= error.full_message %></strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <% end %>
+  </div>
+<% end %>
